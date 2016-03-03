@@ -9,24 +9,46 @@ namespace qw1
 
     class main
     {
-        public static void Main()
+        static void Main(string[] args)
         {
-            int n, i, c, j, l; string rez = ""; string t = "";
-            n = Convert.ToInt32(Console.ReadLine());
-            for (i = 1; i <= n; i++)
+
+         
+
+            List<long> ans = new List<long>();
+
+            long s = System.Int64.Parse(Console.ReadLine());
+
+            for (int i = 0; i < s; i++)
             {
-                c = Convert.ToInt32(Console.ReadLine());
-                t = "1";
-                l = t.Length;
-                for (j = 1; l <= c; j++)
-                {
-                    t = t + Convert.ToString(Math.Pow(10, j));
-                    l = t.Length;
-                }
-                rez = rez + t[c - 1] + " ";
+                int x = int.Parse(Console.ReadLine());
+                ans.Add(Find(x));
             }
-            Console.WriteLine(rez);
-            Console.ReadLine();
+
+            for (int i = 0; i < s; i++)
+            {
+                Console.Write(ans[i]);
+                Console.Write(" ");
+            }
+
+
+
+          
+        }
+
+        static long Find(long x)
+        {
+
+            // (a)n^2 + (b)n - (c)2x = 0
+            // a = 1
+            // b = 1
+            // c = 2 * x
+
+            double a = 1, b = 1, c = -2 * x + 2;
+            double d = b * b - 4 * a * c;
+            double p = (-b + Math.Sqrt(d)) / 2 * a;
+
+            return (p - (long)p) > 0 ? 0 : 1;
+
         }
 
     }
