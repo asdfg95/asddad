@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+   
+        @Html.ActionLink("Home","Index","Home")
+        @Html.ActionLink("About","AboutMe","About")
+        @Html.ActionLink("Book","Books", "About")
+        @Html.ActionLink("Film","Film", "About")
+   
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

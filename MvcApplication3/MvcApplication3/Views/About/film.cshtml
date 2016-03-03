@@ -1,0 +1,18 @@
+﻿<style>
+    body {
+        background: #3EE784;
+        color: #BA49F3;
+    }
+</style>
+
+    <div>
+        <h1>Списочек любимых фильмов</h1>
+        <ul>
+            @foreach (var film in Model)
+            {
+                <li>@("Название: "+film.name+". Год: "+film.year)</li>
+            }
+        </ul>
+        <a href="~/Home/Index">Назад</a>
+       
+    </div>

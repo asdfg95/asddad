@@ -1,0 +1,18 @@
+﻿<style>
+    body {
+        background: #3EE784;
+        color: #BA49F3;
+    }
+</style>
+
+    <div>
+        <h1>Списочек любимых книг</h1>
+        <ul>
+            @foreach (var book in Model)
+            {
+                <li>@("Название: "+book.name+". Автор: "+book.author)</li>
+            }
+        </ul>
+        <a href="~/Home/Index">Назад</a>
+       
+    </div>
